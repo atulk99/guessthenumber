@@ -1,0 +1,42 @@
+import java.util.*;
+class game{
+    int num;
+    int n;
+    int nofGuess;
+    game(){
+        System.out.println("Game Begin");
+        Random r=new Random();
+        num=r.nextInt(100);
+    }
+    void takeinput(){
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        this.n=n;
+    }
+    boolean checkoutput(){
+        nofGuess++;
+        if(n==num){
+            System.out.println("Perfect at "+nofGuess+ " Attempt");
+            return true;
+        }
+        else if(n>num){
+            System.out.println("Number is less");
+            return false;
+        }
+        else if(n<num){
+            System.out.println("Number is More");
+            return false;
+        }
+        return false;
+    }
+}
+public class Main {
+    public static void main(String args[]) {
+        game g=new game();
+        boolean b=false;
+        while(!b){
+            g.takeinput();
+            g.checkoutput();
+        }
+    }
+}
