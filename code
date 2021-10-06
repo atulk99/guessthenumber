@@ -1,3 +1,4 @@
+//Code by Atul Kumar
 import java.util.*;
 class game{
     int num;
